@@ -46,22 +46,11 @@ async function login() {
     alert("Login fehlgeschlagen – überprüfe deine Eingaben.");
 }
 
-async function init() {
-    let userShort = document.getElementById('user-short');
-    let user = document.getElementById('user');
-
-    let userResponse = await fetch(url + 'currentUser.json');
-    let userData = await userResponse.json();
-    let currentUserResponse = await fetch(url + 'user/' + userData + '.json');
-    let currentUser = await currentUserResponse.json();
-    if (userData == 'guest') {
-        guestSummary();
-    } else {
-        let fullName = currentUser.name;
-        let [firstName, lastName] = fullName.split(" ");
-        let initials = firstName[0] + lastName[0];
-        user.innerHTML = currentUser.name;
-        userShort.innerHTML = initials;
+async function init(site) {
+    if (site == 'summary') {
+        summaryInit();
+    } else if (site == 'add-task') {
+        addTaskInit();
     }
 }
 
@@ -103,14 +92,15 @@ async function guest() {
     window.location.href = "./summary.html";
 }
 
-async function guestSummary() {
+async function guestSummary(site) {
     let userShort = document.getElementById('user-short');
+    if (site == 'summary') {
     let comma = document.getElementById('comma');
     let goodMorningH1 = document.getElementById('good-morning');
-
     goodMorningH1.style.fontWeight = '600';
-    userShort.innerHTML = 'G';
     comma.innerHTML = '';
+    } 
+    userShort.innerHTML = 'G';
 }
 
 function toggleButton() {
@@ -121,5 +111,39 @@ function toggleButton() {
         checkmarkButton.disabled = true;
     } else {
         checkmarkButton.disabled = false;
+    }
+}
+
+async function summaryInit() {
+    let userShort = document.getElementById('user-short');
+    let user = document.getElementById('user');
+    let userResponse = await fetch(url + 'currentUser.json');
+    let userData = await userResponse.json();
+    let currentUserResponse = await fetch(url + 'user/' + userData + '.json');
+    let currentUser = await currentUserResponse.json();
+    if (userData == 'guest') {
+        guestSummary('summary');
+    } else {
+        let fullName = currentUser.name;
+        let [firstName, lastName] = fullName.split(" ");
+        let initials = firstName[0] + lastName[0];
+        user.innerHTML = currentUser.name;
+        userShort.innerHTML = initials;
+    }
+}
+
+async function addTaskInit() {
+    let userShort = document.getElementById('user-short');
+    let userResponse = await fetch(url + 'currentUser.json');
+    let userData = await userResponse.json();
+    let currentUserResponse = await fetch(url + 'user/' + userData + '.json');
+    let currentUser = await currentUserResponse.json();
+    if (userData == 'guest') {
+        guestSummary('add-task');
+    } else {
+        let fullName = currentUser.name;
+        let [firstName, lastName] = fullName.split(" ");
+        let initials = firstName[0] + lastName[0];
+        userShort.innerHTML = initials;
     }
 }
