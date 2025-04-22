@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/summary-styles.css">
+  <link rel="stylesheet" href="./styles/header-styles.css">
+  <link rel="stylesheet" href="./styles/margin-and-padding.css">
+  <link rel="stylesheet" href="./styles/left-nav-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<header id="header">
+
+</header>
+
+<body onload="init()">
+  <div class="body-div">
+    <div id="left-nav" class="left-nav">
+
+    </div>
+    <div class="summary-content" id="summary-content">
+      <div class="summary-headline">
+        <h1 id="good-morning">Good morning<i id="comma">,</i></h1>
+        <span id="user"></span>
+      </div>
+      <div>
+        <div class="summary-tasks-div mt-90">
+          <div class="summary-urgent-task" id="urgent-task">
+            <div class="summary-urgent-task-div">
+              <div class="summary-urgent-task-left pr-40">
+                <div class="summary-urgent-task-img-div">
+                  <img src="./assets/icons/urgent.png" class="tasks-img mr-30" alt="Urgent Icon">
+                  <span class="fs-48">1</span>
+                </div>
+                <span class="fs-28 mt-20 fw-300">Tasks Urgent</span>
+              </div>
+              <div class="divider-vertical-3px white"></div>
+              <div class="summary-urgent-task-right pl-40">
+                <span class="fs-36" id="deadline">October 16, 2022</span>
+                <span class="fs-28 fw-300 mt-20">Upcoming Deadline</span>
+              </div>
+            </div>
+          </div>
+          <div class="summary-tasks">
+            <div class="summary-task-div">
+              <div class="summary-urgent-task-img-div">
+              <img src="./assets/icons/board.png" alt="" class="tasks-img mr-30">
+              <span class="fs-48 black">2</span>
+            </div>
+              <span class="fs-28 fw-300 mt-20 blue center">Task in Borad</span>
+            </div>
+          </div>
+        </div>
+        <div class="summary-tasks-div mt-30">
+          <div class="summary-tasks">
+            <div class="summary-task-div">
+              <div class="summary-urgent-task-img-div">
+              <img src="./assets/icons/to-do.png" alt="" class="tasks-img mr-30">
+              <span class="fs-48 black">2</span>
+            </div>
+              <span class="fs-28 fw-300 mt-20 blue center">Task To-do</span>
+            </div>
+          </div>
+          <div class="summary-tasks">
+            <div class="summary-task-div">
+              <div class="summary-urgent-task-img-div">
+              <img src="./assets/icons/progress.png" alt="" class="tasks-img mr-30">
+              <span class="fs-48 black">2</span>
+            </div>
+              <span class="fs-28 fw-300 mt-20 blue center">Task in Progress</span>
+            </div>
+          </div>
+          <div class="summary-tasks">
+            <div class="summary-task-div">
+              <div class="summary-urgent-task-img-div">
+              <img src="./assets/icons/feedback.png" alt="" class="tasks-img mr-30">
+              <span class="fs-48 black">2</span>
+            </div>
+              <span class="fs-28 fw-300 mt-20 blue center">Awaiting Feedback</span>
+            </div>
+          </div>
+          <div class="summary-tasks">
+            <div class="summary-task-div">
+              <div class="summary-urgent-task-img-div">
+              <img src="./assets/icons/done.png" alt="" class="tasks-img mr-30">
+              <span class="fs-48 black">2</span>
+            </div>
+              <span class="fs-28 fw-300 mt-20 blue center">Tasks Done</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  fetch('./html-assets/header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  fetch('./html-assets/left-nav.html')
+    .then(response => response.text())
+    .then(dataleft => {
+      document.getElementById('left-nav').innerHTML = dataleft;
+    });
+</script>
+
+</html>

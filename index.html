@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Join</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/login-signup-styles.css">
+    <link rel="stylesheet" href="./styles/margin-and-padding.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+        <script src="script.js"></script>
+</head>
+
+<body onload="firstInit()">
+    <div class="first-load hidden" id="first-load"><img src="./assets/img/join-logo.png" alt="Join Logo"
+            class="first-load-img"></div>
+    <div>
+        <div class="login-header">
+            <img src="./assets/img/join-logo.png" alt="Join Logo" class="main-logo">
+            <div>
+                <span class="login-span">Not a Join user?</span>
+                <a href="./signup.html"><button class="login-button ml-35">Sign up</button></a>
+            </div>
+        </div>
+        <div class="login-main">
+            <div class="login-headline"><b>Log in</b>
+                <div class="divider-3px"></div>
+            </div>
+            <form class="login-form mt-40" onsubmit="return false">
+                <div class="login-data">
+                    <input id="email" type="email" class="login-input" placeholder="Email" required>
+                    <img src="./assets/icons/mail.svg" alt="Mail Icon" class="pr-20">
+                </div>
+                <div class="divider-2px"></div>
+                <div class="login-data mt-40">
+                    <input id="password" type="password" class="login-input" placeholder="Password" required>
+                    <img src="./assets/icons/lock.svg" alt="Lock Icon" class="pr-20">
+                </div>
+                <div class="divider-2px"></div>
+                <div class="mt-60 login-buttons-div">
+                    <input type="submit" class="login-button" value="Log in" onclick="login()">
+                    <button class="guest login-button" onclick="guestLogin()" formnovalidate>Guest log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="login-footer">
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./legal-notice.html">Legal Notice</a>
+    </div>
+</body>
+
+</html>
