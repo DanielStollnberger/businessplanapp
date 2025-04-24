@@ -1,5 +1,7 @@
 const url = 'https://join-id-default-rtdb.europe-west1.firebasedatabase.app/';
 
+
+
 function firstInit() {
     let overlay = document.getElementById('first-load');
     overlay.classList.remove('hidden');
@@ -18,8 +20,7 @@ async function signup() {
     const pass = document.getElementById('password').value;
     const confirm = document.getElementById('confirm-password').value;
     const checked = document.getElementById('checkmark').checked;
-
-    if (name && email && pass && pass === confirm && checked) {
+    if (name && email && pass && pass === confirm && checked && checkName(name)) {
         const newUser = { name, email, password: pass }; //shortform-object - das gleiche wie const newUser = {"name":name,"email":email,"password":pass}
         await fetch(url + 'user.json', {
             method: "POST",
@@ -49,8 +50,6 @@ async function login() {
 async function init(site) {
     if (site == 'summary') {
         summaryInit();
-    } else if (site == 'add-task') {
-        addTaskInit();
     }
 }
 
@@ -92,14 +91,11 @@ async function guest() {
     window.location.href = "./summary.html";
 }
 
-async function guestSummary(site) {
-    let userShort = document.getElementById('user-short');
-    if (site == 'summary') {
+async function guestSummary() {
     let comma = document.getElementById('comma');
     let goodMorningH1 = document.getElementById('good-morning');
     goodMorningH1.style.fontWeight = '600';
     comma.innerHTML = '';
-    } 
     userShort.innerHTML = 'G';
 }
 
@@ -115,7 +111,6 @@ function toggleButton() {
 }
 
 async function summaryInit() {
-    let userShort = document.getElementById('user-short');
     let user = document.getElementById('user');
     let userResponse = await fetch(url + 'currentUser.json');
     let userData = await userResponse.json();
@@ -126,24 +121,31 @@ async function summaryInit() {
     } else {
         let fullName = currentUser.name;
         let [firstName, lastName] = fullName.split(" ");
-        let initials = firstName[0] + lastName[0];
-        user.innerHTML = currentUser.name;
-        userShort.innerHTML = initials;
+        user.innerHTML = firstName[0].toUpperCase() + firstName.substring(1) + ' ' + lastName[0].toUpperCase() + lastName.substring(1);
     }
 }
 
-async function addTaskInit() {
+function checkName(name) {
+    if (name.split(/\s+/).length == 2) {
+        return true;
+    } else {
+       alert('Enter your full name please!');
+       return false;
+    }
+}
+
+async function userShort() {
     let userShort = document.getElementById('user-short');
     let userResponse = await fetch(url + 'currentUser.json');
     let userData = await userResponse.json();
     let currentUserResponse = await fetch(url + 'user/' + userData + '.json');
     let currentUser = await currentUserResponse.json();
     if (userData == 'guest') {
-        guestSummary('add-task');
+       userShort.innerHTML = 'G';
     } else {
         let fullName = currentUser.name;
         let [firstName, lastName] = fullName.split(" ");
         let initials = firstName[0] + lastName[0];
-        userShort.innerHTML = initials;
+        userShort.innerHTML = initials.toUpperCase();
     }
 }

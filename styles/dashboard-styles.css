@@ -1,0 +1,137 @@
+.dashboard-content {
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    flex: 1;
+}
+
+.dashboard-search-div {
+    display: flex;
+}
+
+.dashboard-searchbar {
+    display: flex;
+    border: 1.5px solid #43536e97;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.dashboard-tasks {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+::placeholder {
+    color: #00000043;
+    font-weight: 300;
+}
+
+.dashboard-create-task {
+    padding: 10px;
+    background: #448aff;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    font-weight: 300;
+}
+
+.dashboard-create-task img {
+    filter: brightness(0) invert(1);
+}
+
+.dashboard-create-task:hover{
+    background-color: #4489ffd7;
+}
+
+.dashboard-tasks-div{
+    flex: 1;
+}
+
+.tasks-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 0;
+}
+
+h2{
+    color: #43536e;
+}
+
+.dashboard-add-task-img{
+    filter: brightness(0) saturate(100%) invert(38%) sepia(86%) saturate(748%) hue-rotate(199deg) brightness(102%) contrast(101%); 
+}
+
+.dashboard-add-task-img:hover{
+    cursor: pointer;
+}
+
+.dashboard-task-column{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px solid #43536e18;
+    padding: 20px;
+}
+
+.no-tasks{
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    border: 1px dashed #00000043;
+    border-radius: 10px;
+    background: #00000016;
+    color: #00000048;
+}
+
+h3{
+    color: white;
+    padding: 5px 0;
+    font-weight: 200;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 85%;
+}
+
+h4{
+    color: #448aff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.task-span{
+    color: #00000074;
+    font-size: 20px;
+}
+
+.task-orange{
+    background: #ff7a00;
+}
+
+.task-blue{
+    background: #0038ff;
+}
+
+.dashboard-subtask-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.assigned-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: center;
+    width: 100%;
+}

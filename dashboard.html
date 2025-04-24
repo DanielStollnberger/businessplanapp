@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/dashboard-styles.css">
   <link rel="stylesheet" href="./styles/header-styles.css">
   <link rel="stylesheet" href="./styles/margin-and-padding.css">
   <link rel="stylesheet" href="./styles/left-nav-styles.css">
@@ -19,10 +20,101 @@
 <header id="header">
 
 </header>
-<body>
+
+<body onload="init('dashboard')">
   <div class="body-div">
     <div id="left-nav" class="left-nav">
 
+    </div>
+    <div class="dashboard-content">
+      <div class="dashboard-search-div">
+        <div class="dashboard-searchbar">
+          <input type="text" placeholder="Find Task" name="search" class="mr-40 fs-18">
+          <div class="divider-vertical-1px"></div>
+          <button type="submit" class="white ml-15"><img src="./assets/icons/board_search.svg" alt="Search Icon"
+              style="background-color: white;"></button>
+        </div>
+        <button class="dashboard-create-task ml-40">Add task <img src="./assets/icons/add.svg" alt=""></button>
+      </div>
+      <div>
+        <div class="dashboard-tasks mt-60">
+          <div class="dashboard-tasks-div">
+            <div class="tasks-header">
+              <h2>To do</h2>
+              <img src="./assets/icons/board-column_plus button.svg" class="dashboard-add-task-img">
+            </div>
+            <div class="dashboard-task-column mt-30">
+              <div class="no-tasks fs-20" style="white-space: nowrap;">No tasks To do</div>
+            </div>
+          </div>
+          <div class="dashboard-tasks-div">
+            <div class="tasks-header">
+              <h2>In progress</h2>
+              <img src="./assets/icons/board-column_plus button.svg" class="dashboard-add-task-img">
+            </div>
+            <div class="dashboard-task-column mt-30">
+              <div class="tasks">
+                <h3 class="task-orange">Technical Task</h3>
+                <h4 class="mt-30 mb-10">CSS Architecture Planning</h4>
+                <span class="task-span">Define CSS naming conventions and structure</span>
+                <div class="dashboard-subtask-div">
+                  <progress value="50" max="100"></progress>
+                  <span>2/2 Subtasks</span>
+                </div>
+                <div class="assigned-div">
+                  <div>DS</div>
+                  <img src="./assets/icons/priority-medium.png" alt="">
+                </div>
+              </div>
+              <div class="tasks"></div>
+            </div>
+          </div>
+          <div class="dashboard-tasks-div">
+            <div class="tasks-header">
+              <h2>Await feedback</h2>
+              <img src="./assets/icons/board-column_plus button.svg" class="dashboard-add-task-img">
+            </div>
+            <div class="dashboard-task-column mt-30">
+                <div class="tasks">
+                  <h3 class="task-orange">Technical Task</h3>
+                  <h4 class="mt-30 mb-10">CSS Architecture Planning</h4>
+                  <span class="task-span">Define CSS naming conventions and structure</span>
+                  <div class="dashboard-subtask-div">
+                    <progress value="50" max="100"></progress>
+                    <span>2/2</span>
+                  </div>
+                  <div class="assigned-div">
+                    <div>DS</div>
+                    <img src="./assets/icons/priority-medium.png" alt="">
+                  </div>
+                </div>
+                <div class="tasks"></div>
+            </div>
+          </div>
+          <div class="dashboard-tasks-div">
+            <div class="tasks-header">
+              <h2>Done</h2>
+              <img src="./assets/icons/board-column_plus button.svg" class="dashboard-add-task-img">
+            </div>
+            <div class="dashboard-task-column mt-30">
+              <div class="tasks">
+                <h3 class="task-blue">Technical Task</h3>
+                <h4 class="mt-30 mb-10">CSS Architecture Planning</h4>
+                <span class="task-span">Define CSS naming conventions and structure</span>
+                <div class="dashboard-subtask-div">
+                  <progress value="50" max="100"></progress>
+                  <span>2/2</span>
+                </div>
+                <div class="assigned-div">
+                  <div>DS</div>
+                  <img src="./assets/icons/priority-medium.png">
+                </div>
+              </div>
+              <div class="tasks"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -39,4 +131,5 @@
       document.getElementById('left-nav').innerHTML = dataleft;
     });
 </script>
+
 </html>

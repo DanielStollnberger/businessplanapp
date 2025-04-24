@@ -14,12 +14,20 @@
     margin-left: 10px;
 }
 
+.ml-15{
+    margin-left: 15px;
+}
+
 .ml-40{
     margin-left: 40px;
 }
 
 .ml-35{
     margin-left: 35px;
+}
+
+.mt-10{
+    margin-top: 10px;
 }
 
 .mt-40{
@@ -50,6 +58,14 @@
     margin-top: 5px;
 }
 
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.mb-30{
+    margin-bottom: 30px;
+}
+
 .pr-20{
     padding-right: 20px;
 }
@@ -73,6 +89,11 @@
     background: #448aff;
 }
 
+.divider-vertical-1px{
+    width: 1px;
+    background: #0000002f;
+}
+
 .divider-2px{
     height: 2px;
     background: #0000002f;
@@ -89,6 +110,14 @@
 
 .black{
 color: black;
+}
+
+.fs-16{
+    font-size: 16px;
+}
+
+.fs-18{
+    font-size: 18px;
 }
 
 .fs-20{
