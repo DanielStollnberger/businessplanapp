@@ -19,10 +19,59 @@
 <header id="header">
 
 </header>
+
 <body>
   <div class="body-div">
     <div id="left-nav" class="left-nav">
 
+    </div>
+    <div class="contacts-main">
+      <div class="contacts-main-content" id="contacts-content">
+        <div class="new-contact-div">
+          <button class="contacts-create-button">Add new contact<img src="./assets/icons/person_add.svg"
+              class="ml-10"></button>
+        </div>
+        <div class="fs-20 p-20">
+          A
+        </div>
+        <div class="divider-2px"></div>
+        <div class="contact-character-div">
+          <div class="contact">
+            <div class="contact-initials">
+              <div class="contact-initials-badge">AM</div>
+            </div>
+            <div class="contact-info ml-40">
+              <h5 class="fs-20 fw-300">Anton Mayer</h5>
+              <span class="blue fw-300">antom@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-initials">
+              <div class="contact-initials-badge red">AM</div>
+            </div>
+            <div class="contact-info ml-40">
+              <h5 class="fs-20 fw-300">Tatjana Wolf</h5>
+              <span class="blue fw-300">wolf@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1;padding: 60px;">
+      <div class="contact-info-popup">
+        <div class="contact-popup">
+          <div class="contact-initials-popup">
+            <div class="contact-initials-badge-popup fs-36">AM</div>
+          </div>
+          <div class="contact-infos-popup ml-40">
+            <h6 class="fs-28 fw-500">Anton Mayer</h6>
+            <div>
+              <button><img src="" alt="">Edit</button>
+              <button><img src="" alt="">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -39,4 +88,5 @@
       document.getElementById('left-nav').innerHTML = dataleft;
     });
 </script>
+
 </html>

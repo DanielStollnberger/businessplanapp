@@ -72,9 +72,9 @@
 }
 
 .guest {
-    background: white;
-    color: #0000008b;
-    border: 1.5px solid#0000008b;
+  background: white;
+  color: #0000008b;
+  border: 1.5px solid#0000008b;
 }
 
 .guest:hover {

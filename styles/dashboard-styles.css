@@ -2,8 +2,9 @@
     padding: 70px;
     display: flex;
     flex-direction: column;
-    align-items: left;
+    
     flex: 1;
+    height: calc(100vh - 130px);
 }
 
 .dashboard-search-div {
@@ -77,7 +78,7 @@ h2{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    border: 2px solid #43536e18;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     padding: 20px;
 }
 
@@ -86,6 +87,7 @@ h2{
     justify-content: center;
     padding: 15px 20px;
     border: 1px dashed #00000043;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: #00000016;
     color: #00000048;

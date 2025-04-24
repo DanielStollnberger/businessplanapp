@@ -4,7 +4,7 @@
     font-style: normal;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 .body-div {
@@ -63,3 +63,115 @@ input:focus {
 
 
 
+
+
+.contacts-main {
+    overflow-y: scroll;
+    padding: 30px 40px;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 0 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.contacts-main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-create-button {
+    padding: 12px 50px;
+    background: #448aff;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    font-weight: 250;
+    display: flex;
+    align-items: center;
+}
+
+.contacts-create-button img {
+    filter: brightness(0) invert(1);
+}
+
+.contacts-create-button:hover {
+    background-color: #4489ffd7;
+}
+
+.contact-character-div {
+    padding: 10px 0;
+}
+
+.contact {
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.contact:hover {
+    color: white !important;
+    background: #448aff;
+    cursor: pointer;
+}
+
+.contact:hover span {
+    color: white !important;
+  }
+
+.contact-initials {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-initials-badge {
+    width: 35px;
+    height: 35px;
+    background-color: orange;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    font-weight: 300;
+}
+
+.contact-info-popup{
+
+}
+
+.contact-popup {
+    display: flex;
+}
+
+.contact-initials-popup {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-infos-popup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-initials-badge-popup {
+    width: 95px;
+    height: 95px;
+    background-color: orange;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 300;
+}

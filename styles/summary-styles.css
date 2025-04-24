@@ -36,13 +36,14 @@ h1 {
     color: white;
     display: flex;
     justify-content: center;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .summary-tasks {
     width: 23%;
     height: 200px;
     border-radius: 35px;
-    border: 2.5px solid #0000001a;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     }
 
     .summary-tasks:hover{

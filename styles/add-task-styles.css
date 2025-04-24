@@ -1,9 +1,9 @@
 .add-task-main {
-    width: 40%;
     overflow-y: scroll;
     padding: 20px;
-    height: 850px;
+    display: flex;
     scroll-behavior: smooth;
+    height: calc(100vh - 130px);
 }
 
 .add-task-main-div {
@@ -60,7 +60,7 @@
 }
 
 .priority-button {
-    border: 2px solid #0000001b;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
     width: 30%;
     background: none;
     font-size: 24px;
@@ -133,3 +133,46 @@
 .add-task-icon {
     filter: opacity(30%);
 }
+
+.task-create-button {
+    padding: 12px;
+    background: #448aff;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    font-weight: 250;
+    display: flex;
+    align-items: center;
+}
+
+.create img {
+    filter: brightness(0) invert(1);
+}
+
+.task-create-button:hover{
+    background-color: #4489ffd7;
+}
+
+.task-create-buttons{
+    padding: 0 50px 40px 0;
+    flex: 1;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+
+.task-create-buttons-div{
+    display: flex;
+    gap: 20px;
+}
+
+.guest {
+    background: white;
+    color: #0000008b;
+    border: 1.5px solid#0000008b;
+  }
+  
+  .guest:hover {
+      background: #00000011;
+  }
+
