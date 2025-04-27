@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/contact-styles.css">
   <link rel="stylesheet" href="./styles/header-styles.css">
   <link rel="stylesheet" href="./styles/margin-and-padding.css">
   <link rel="stylesheet" href="./styles/left-nav-styles.css">
@@ -25,7 +26,7 @@
     <div id="left-nav" class="left-nav">
 
     </div>
-    <div class="contacts-main">
+    <section class="contacts-main">
       <div class="contacts-main-content" id="contacts-content">
         <div class="new-contact-div">
           <button class="contacts-create-button">Add new contact<img src="./assets/icons/person_add.svg"
@@ -47,7 +48,7 @@
           </div>
           <div class="contact">
             <div class="contact-initials">
-              <div class="contact-initials-badge red">AM</div>
+              <div class="contact-initials-badge red">TW</div>
             </div>
             <div class="contact-info ml-40">
               <h5 class="fs-20 fw-300">Tatjana Wolf</h5>
@@ -56,23 +57,30 @@
           </div>
         </div>
       </div>
-    </div>
-    <div style="flex: 1;padding: 60px;">
-      <div class="contact-info-popup">
+    </section>
+    <section class="contact-info-popup">
+      <div>
         <div class="contact-popup">
           <div class="contact-initials-popup">
             <div class="contact-initials-badge-popup fs-36">AM</div>
           </div>
           <div class="contact-infos-popup ml-40">
-            <h6 class="fs-28 fw-500">Anton Mayer</h6>
-            <div>
-              <button><img src="" alt="">Edit</button>
-              <button><img src="" alt="">Delete</button>
+            <h6 class="fs-36 fw-500">Anton Mayer</h6>
+            <div class="contact-edit-buttons mt-20">
+              <button class="fs-20 fw-300 edit-button"><img src="./assets/icons/edit-blue.svg">Edit</button>
+              <button class="fs-20 fw-300 edit-button"><img src="./assets/icons/delete-blue.svg">Delete</button>
             </div>
           </div>
         </div>
+        <div class="contact-information mt-30">
+          <span class="fs-28 fw-500">Contact Information</span>
+          <span class="mt-30 fs-20 fw-500">Email</span>
+          <span class="mt-20 fs-20 fw-300 blue">antom@gmail.com</span>
+          <span class="mt-30 fs-20 fw-500">Phone</span>
+          <span class="mt-20 fs-20 fw-300">+49 111 11 1 1111</span>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 <script>

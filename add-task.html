@@ -26,41 +26,55 @@
     <div id="left-nav" class="left-nav">
 
     </div>
-    <div class="add-task-main">
-      <div class="add-task-main-div">
-        <input type="text" class="add-task-input fs-36" placeholder="Enter a title">
+    <section class="add-task-main">
+      <form class="add-task-main-div">
+        <input type="text" id="task-title" class="add-task-input fs-36" placeholder="Enter a title" required
+          oninput="enableCreateTaskButton()">
         <div class="divider-2px"></div>
         <div class="description-div mt-40">
           <span class="fs-20">Description <span class="fw-300">(optional)</span></span>
-          <textarea class="description-input" placeholder="Enter a description"></textarea>
+          <textarea id="description" class="description-input" placeholder="Enter a description"></textarea>
         </div>
         <div class="date-div mt-40">
           <span class="fs-20">Due date</span>
-          <input type="date" class="mt-20 date-input">
+          <input type="date" id="due-date" class="mt-20 date-input" required oninput="enableCreateTaskButton()">
           <div class="divider-2px"></div>
         </div>
         <div class="priority-div mt-40">
           <span class="fs-20">Priority</span>
           <div class="priority-buttons mt-5">
-            <button class="priority-button urgent">Urgent<img src="./assets/icons/priority-urgent.png" alt="Urgent Icon"
-                class="ml-10"></button>
-            <button class="priority-button medium">Medium<img src="./assets/icons/priority-medium.png"
-                alt="Medium prio Icon" class="ml-10"></button>
-            <button class="priority-button low">Low<img src="./assets/icons/priority-low.png" alt="Low prio Icon"
-                class="ml-10"></button>
+            <input type="radio" id="urgent" name="priority" hidden>
+            <label for="urgent" class="priority-button urgent" onclick="addInfoToTask('urgent')">
+              Urgent
+              <img src="./assets/icons/priority-urgent.png" alt="Urgent Icon" class="ml-10">
+            </label>
+          
+            <input type="radio" id="medium" name="priority" hidden onclick="addInfoToTask('medium')">
+            <label for="medium" class="priority-button medium">
+              Medium
+              <img src="./assets/icons/priority-medium.png" alt="Medium prio Icon" class="ml-10">
+            </label>
+          
+            <input type="radio" id="low" name="priority" hidden onclick="addInfoToTask('low')">
+            <label for="low" class="priority-button low">
+              Low
+              <img src="./assets/icons/priority-low.png" alt="Low prio Icon" class="ml-10">
+            </label>
           </div>
         </div>
         <div class="assigned-div mt-40">
           <span class="fs-20">Assigned to <span class="fw-300">(optional)</span></span>
-          <select class="assigned-select">
-            <option value="volvo">Select contacts to assign</option>
+          <select id="assigned-to" class="assigned-select" required>
+            <option value="" selected hidden>Select contacts to assign</option>
+            <option value="anton-mayer">Anton Mayer</option>
+            <option value="tatajana-wolf">Tatjana Wolf</option>
           </select>
           <div class="divider-2px fs-20"></div>
         </div>
         <div class="assigned-div mt-40">
           <span class="fs-20">Category</span>
-          <select class="assigned-select">
-            <option value="0">Select task category</option>
+          <select id="category-selection" class="assigned-select" required oninput="enableCreateTaskButton()">
+            <option value="" selected hidden>Select task category</option>
             <option value="technical-task">Technical Task</option>
             <option value="user-story">User Story</option>
           </select>
@@ -69,19 +83,24 @@
         <div class="subtask-div mt-40">
           <span class="fs-20">Subtasks <span class="fw-300">(optional)</span></span>
           <div class="subtask-input-div">
-            <input type="text" class="subtask-input" placeholder="Add new subtask">
-            <img src="./assets/icons/add.svg" alt="Lock Icon" class="add-task-icon">
+            <input id="subtask-input" type="text" class="subtask-input" placeholder="Add new subtask">
+            <img src="./assets/icons/add.svg" alt="Lock Icon" class="add-task-icon" onclick="addSubtask()">
           </div>
           <div class="divider-2px fs-20"></div>
+          <div id="subtask-content" style="padding: 10px;">
+
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="task-create-buttons">
+      </form>
+    </section>
+    <section class="task-create-buttons">
       <div class="task-create-buttons-div">
-        <button class="task-create-button guest">Clear <img src="./assets/icons/cancel.svg" class="ml-10"></button>
-        <button class="task-create-button create">Create Task <img src="./assets/icons/check.svg" class="ml-10"></button>
+        <button class="task-create-button guest" onclick="clearTask()">Clear <img src="./assets/icons/cancel.svg"
+            class="ml-10"></button>
+        <button id="create-task-button" class="task-create-button create" onclick="createTask()" disabled>Create Task
+          <img src="./assets/icons/check.svg" class="ml-10"></button>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 <script>

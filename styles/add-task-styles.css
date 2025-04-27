@@ -72,20 +72,7 @@
     justify-content: center;
 }
 
-.urgent:hover {
-    color: white;
-    background: #ff3e00;
-}
 
-.medium:hover {
-    color: white;
-    background: #ffad21;
-}
-
-.low:hover {
-    color: white;
-    background: #7ee129;
-}
 
 .medium img,
 .urgent img,
@@ -93,11 +80,7 @@
     transition: filter .2s ease, opacity .2s ease;
 }
 
-.urgent:hover img,
-.medium:hover img,
-.low:hover img {
-    filter: brightness(0) invert(1);
-}
+
 
 .assigned-div {
     display: flex;
@@ -119,7 +102,7 @@
 
 .subtask-input {
     margin-top: 5px;
-    color: #00000043;
+    color: black;
     font-size: 24px;
     padding: 10px 20px;
 }
@@ -131,7 +114,15 @@
 }
 
 .add-task-icon {
-    filter: opacity(30%);
+    padding: 10px;
+    filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg);
+}
+
+.add-task-icon:hover {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background: #4489ff69;
 }
 
 .task-create-button {
@@ -145,15 +136,20 @@
     align-items: center;
 }
 
+.create:disabled {
+    background-color: #4489ffd7;
+    cursor: default;
+}
+
 .create img {
     filter: brightness(0) invert(1);
 }
 
-.task-create-button:hover{
+.task-create-button:hover {
     background-color: #4489ffd7;
 }
 
-.task-create-buttons{
+.task-create-buttons {
     padding: 0 50px 40px 0;
     flex: 1;
     display: flex;
@@ -161,7 +157,7 @@
     justify-content: right;
 }
 
-.task-create-buttons-div{
+.task-create-buttons-div {
     display: flex;
     gap: 20px;
 }
@@ -170,9 +166,42 @@
     background: white;
     color: #0000008b;
     border: 1.5px solid#0000008b;
-  }
-  
-  .guest:hover {
-      background: #00000011;
-  }
+}
 
+.guest:hover {
+    background: #00000011;
+}
+
+.added-subtask {
+    padding: 5px;
+}
+
+input#urgent:checked+.urgent,
+.urgent:hover {
+    color: white;
+    background: #ff3e00;
+    cursor: pointer;
+}
+
+input#medium:checked+.medium,
+.medium:hover {
+    color: white;
+    background: #ffad21;
+    cursor: pointer;
+}
+
+input#low:checked+.low,
+.low:hover {
+    color: white;
+    background: #7ee129;
+    cursor: pointer;
+}
+
+input#urgent:checked+.urgent img,
+.urgent:hover img,
+input#medium:checked+.medium img,
+.medium:hover img,
+input#low:checked+.low img,
+.low:hover img {
+    filter: brightness(0) invert(1);
+}
